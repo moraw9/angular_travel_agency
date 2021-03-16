@@ -1,0 +1,28 @@
+<nav>
+    <a href="#"><img src="assets/images/logo.svg" alt="Logo" width="30px" /></a>
+    <ul id="nav-mobile" class="right">
+      <li *ngIf="!isLoggedIn">
+        <a style="text-decoration: none;" routerLink="/homePage" routerLinkActive="active">Strona Główna </a>
+      </li>
+      <li *ngIf="isLoggedIn">
+        <a style="text-decoration: none;" routerLink="/Home" routerLinkActive="active">Home</a>
+      </li>
+      <li *ngIf="isLoggedIn && role != 'vip' && role !='reader' " >
+        <a style=" text-decoration: none;" routerLink="/AddTour" routerLinkActive="active">Dodj wycieczkę</a>
+      </li>
+      <li *ngIf="!isLoggedIn">
+        <a style="text-decoration: none;" routerLink="/login" routerLinkActive="active">Zaloguj</a>
+      </li>
+      <li *ngIf="!isLoggedIn">
+        <a style="text-decoration: none;" routerLink="/register" routerLinkActive="active">Zarejestruj</a>
+      </li>
+      <li *ngIf="isLoggedIn">
+        <a style="text-decoration: none;" (click)="logout()" >Wyloguj</a>
+      </li>
+      <li *ngIf="isLoggedIn">
+        Zalogowany: {{ role }}
+      </li>
+      
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>

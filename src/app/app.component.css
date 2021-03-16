@@ -1,0 +1,9 @@
+body {
+    background: silver;
+    min-height: 100vh;
+  }
+  
+  .btn:active {
+    transform: scale(0.8);
+  }
+ 

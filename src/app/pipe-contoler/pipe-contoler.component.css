@@ -1,0 +1,36 @@
+.form_container{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.title{
+    text-align: center;
+    color: #6f7bc2;
+    font-weight: 700;
+    font-family: 'Nerko One', cursive;
+    font-size: 40px;
+}
+.subtitle{
+    text-align: center;
+    font-size: 14px;
+    color: rgb(65, 62, 62);
+}
+label{
+    margin-left: 10px;
+    font-size: 14px;
+}
+.form-group input{
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid black;
+    width: 90%;
+    height: 25px;
+}
+.button_wrapper{
+    width: 100%;
+    display: flex;
+}
+.btn{
+    
+    margin: 5px auto;
+}

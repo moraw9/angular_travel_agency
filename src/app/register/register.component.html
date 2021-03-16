@@ -1,0 +1,34 @@
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Hachi+Maru+Pop&family=Potta+One&display=swap" rel="stylesheet">
+  </head>
+  <div class="container-fluid">
+    <div class="row no-gutters wrapper">
+      <div class="card form">
+        <div class="card-body">
+          <h3 class="login_signup_header" >Rejestracja</h3>
+
+          <label > Podaj email</label>
+  
+          <input class="data_input" placeholder="email" [(ngModel)]="credentials.email">
+  
+          <label > Podaj hasło</label>
+  
+          <input type="password" class="data_input" placeholder="password" [(ngModel)]="credentials.password">
+  
+          <div class="button_wrapper">
+            <button class="btn btn-primary"  (click)="register()">Zarejestruj</button>
+          </div>
+  
+          <div class="signUp_wrapper">
+            <p>Masz konto?</p>
+            <a style="text-decoration: none;" routerLink="/login" routerLinkActive="active">
+                <button class="btn btn-primary" > Zaloguj się!</button>
+            </a>
+          </div>
+  
+          <h3 style="color: green; text-align: center;">{{ registerInfo }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>

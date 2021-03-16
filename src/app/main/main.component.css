@@ -1,0 +1,129 @@
+.page-container {
+    margin-top: 30px;
+    min-height: 500px;
+  }
+  
+  .page-title {
+    margin-bottom: 20px;
+  }
+  .tour_counter_wrappper{
+    max-width: 300px;
+    height: 100px;
+    margin-left: auto;
+    display: flex;
+  }
+  .tour_counter{
+    margin: auto 0;
+    height: 50px;
+    border-radius: 5px;
+    display: grid;
+  }
+  .subheader{
+    font-size: 22px;
+    font-weight: 700;
+    color:rgb(83, 74, 74);
+    text-align: center;
+  }
+  h1{
+    font-weight: 700;
+    color:rgb(239, 83, 80);
+    font-family: 'Nerko One', cursive;
+    font-size: 80px;
+    text-align: center;
+  }
+  .tour_counter h6{
+    padding: 10px;
+    margin: auto;
+    color: white;
+  }
+  .activity-title {
+    line-height: 26px;
+  }
+  .tour_wrapper{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+  }
+  .tourName{
+    text-align: center;
+  }
+  .description{
+    min-height: 300px;
+    overflow: hidden;
+    padding: 5px;
+    font-size: 14px;
+
+  }
+  .single_tour{
+    border: 2px solid rgb(121, 119, 119);
+    box-shadow: 2px 2px 2px grey;
+    margin: 5px;
+    padding:5px;
+    background-color: whitesmoke;
+    z-index: 1;
+    border-radius: 5px;
+    width: 90%;
+    margin: 5px auto;
+  }
+  .single_tour.tour_red {
+    background-color: rgba(216, 108, 108, 0.63);
+  }
+  .single_tour.tour_green_boundary{
+    border: 5px solid green;
+  }
+  .single_tour.tour_red_boundary{
+    border: 5px solid red;
+  }
+  .photo_content{
+    display: flex;
+  }
+  .photo{
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+  }
+  .panel{
+    align-items: center;
+    margin:10px;
+  }
+  button{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    margin:3px;
+    font-size: 20px;
+    font-weight: 700;
+
+  }
+  .hidden{
+    visibility: hidden;
+  }
+  .visible{
+    visibility: visible;
+  }
+  .bin{
+    float: right;
+  }
+@media(max-width: 960px){
+  .tour_wrapper{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .description{
+    min-height: 300px;
+  }
+}
+  @media(max-width: 678px){
+    .tour_wrapper{
+      display: grid;
+      grid-template-columns: 100%;
+    }
+    .photo{
+      margin: 10px auto;
+      width: 300px;
+      height: 300px;
+    }
+    .description{
+      min-height: 250px;
+    }
+    
+}

@@ -1,0 +1,86 @@
+
+<div class="page-container row">
+
+    <div class="col s12 page-title">
+      <h1>Wymarzone wycieczki</h1>
+      <h5 class="subheader">Zapoznaj się w bogatą ofertą wycieczek </h5>
+    </div>
+
+    <div class="col12 s12 ">
+      <div class="row">
+
+        <div class="col s12 ">
+          <div class="card-panel grey lighten-5 z-depth-1">
+            <div class="valign-wrapper">
+
+              <div *ngIf="reservedtoursCounter >10 " class="tour_counter_wrappper">
+                <div [ngStyle]="{'background-color': greenBg}" class="tour_counter">
+                  <h6> Zarezerwowana ilość wycieczek: <span>{{reservedtoursCounter}}</span> </h6> 
+                </div>
+              </div>
+
+              <div *ngIf="10 >= reservedtoursCounter" class="tour_counter_wrappper">
+                <div [ngStyle]="{'background-color': redBg}" class="tour_counter"> 
+                  <h6>Zarezerwowana ilość wycieczek: <span>{{reservedtoursCounter}}</span> </h6>
+                </div>
+              </div>
+
+            </div>        
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row no-gutters assets_row">
+
+        <div class="col-12 col-md-6 assets_col">
+          <app-pipe-contoler (setFilter)="setFilter($event)"></app-pipe-contoler> 
+        </div>
+        <div class="col-12 col-md-6 assets_col">
+          <app-upgrade-trip ></app-upgrade-trip>
+        </div>
+
+      </div>
+    
+
+      <div class="row no-gutters assets_row">
+        
+          <div class="tour_wrapper">
+            <div  *ngFor="let tour of tours | filterPreference:filterData ; let i = index"> 
+        
+           <div [ngClass]="['single_tour', tour.freeSeats < 4 ? 'tour_red' : '',minPrice == tour.price ? 'tour_green_boundary' : '', maxPrice == tour.price ? 'tour_red_boundary' : '']">
+
+              <div class="photo_content">
+                <img src={{tour.img_link}} alt="obraz" class="circle photo">
+              </div>
+
+              <div class="tour_content">
+                <h3 class="tourName">{{tour.name | uppercase }}</h3><br>
+                <p class="tourDates">
+                  {{tour.start_date.getDate() + '.' + tour.start_date.getMonth() + '.' + tour.start_date.getFullYear()}}<br>
+                  {{tour.end_date.getDate() + '.' + tour.end_date.getMonth() + '.' + tour.end_date.getFullYear()}}
+                </p>
+                <p>Kraj: {{tour.country | uppercase }}</p>
+                <p>Cena: {{tour.price | currency:'USD' }}</p>
+                <div *ngIf="tour.reserverdSeats >= tour.capacity; else elseBlock">
+                  <p style="color: red">BRAK WOLNYCH MIEJSC!</p>
+                </div>
+                <ng-template #elseBlock><p>Miejsca: {{tour.capacity - tour.reserverdSeats}} / {{tour.capacity}}</p></ng-template>
+              
+                <p class="description">Opis: {{tour.description}}</p>
+              </div>
+              <div class="panel">
+                <span><button [ngClass]="[tour.reserverdSeats >= tour.capacity ? 'hidden' : 'visible']" type="button" (click)="reserveTour(tour)">+</button></span>
+                <span><button [ngClass]="[tour.reserverdSeats > 0 ? 'visible' : 'hidden']" (click)="removeReservation(tour)">-</button></span>
+                <span *ngIf="role !='vip' && role !='reader' "><button  class="bin"  (click)="removeTour(tour)">X</button></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col l4 m6 s12">
+      <ng-content select="[sidebar]"></ng-content>
+    </div>
+  </div>

@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 main-column">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="title">Dodaj wycieczkę</h5>
+                <h6 class="subtitle mb-2 text-muted">Podaj dane wycieczki</h6>
+
+                <form validate [formGroup]="myForm" (ngSubmit)="submitForm(myForm)">
+
+                <div class="form-group" [ngClass]="{
+                    'has-danger': name.invalid && name.dirty,
+                    'has-success': name.valid && name.dirty}">
+                    <label>Nazwa wycieczki</label>
+                    <input type="text" name="name" class="form-control" formControlName="name" required>
+
+                </div>
+
+                <div class="form-group"  [ngClass]="{
+                    'has-danger': country.invalid && country.dirty,
+                    'has-success': country.valid && country.dirty }">
+                    <label>Kraj</label>
+                    <input type="text" class="form-control" formControlName="country" required>
+
+                </div>
+
+                <div class="form-group" [ngClass]="{
+                'has-danger': start_date.invalid && start_date.dirty,
+                'has-success': start_date.valid && start_date.dirty }">
+                    <label>Data rozpcząecia</label>
+                    <input type="date" class="form-control"  formControlName="start_date" min="{{todayDate | date:'yyyy-MM-dd'}}" required>
+
+                </div>
+
+                <div class="form-group" [ngClass]="{
+                'has-danger': end_date.invalid && end_date.dirty,
+                'has-success': end_date.valid && end_date.dirty }">
+                    <label>Data zakończenia</label>
+                    <input type="date" class="form-control" formControlName="end_date" min="{{todayDate | date:'yyyy-MM-dd'}}" required>
+
+                </div>  
+
+                <div class="form-group" [ngClass]="{
+                    'has-danger': price.invalid && price.dirty,
+                    'has-success': price.valid && price.dirty }">
+
+                    <label>Cena</label>
+                    <input  class="form-control" formControlName="price" required>
+
+                </div>
+
+                <div class="form-group" [ngClass]="{
+                    'has-danger': capacity.invalid && capacity.dirty,
+                    'has-success': capacity.valid && capacity.dirty }">
+
+                    <label>Max ilość osób</label>
+                    <input  class="form-control"  formControlName="capacity" required>
+
+                </div>
+
+                <div class="form-group" [ngClass]="{
+                    'has-danger': description.invalid && description.dirty,
+                    'has-success': description.valid && description.dirty }">
+
+                    <label>Opis</label>
+                    <input type="text" class="form-control"  formControlName="description" required>
+
+                </div>
+
+                <div class="form-group"[ngClass]="{
+                    'has-danger': link.invalid && link.dirty,
+                    'has-success': link.valid && link.dirty }">
+                    <label>Link do zdjęcia</label>
+                    <input  class="form-control"  formControlName="link" required>
+
+                </div>
+                <div class="button_wrapper">
+                    <button type="submit" class="btn btn-primary"  [disabled]="!myForm.valid">Dodaj wycieczkę</button>
+                </div>
+                </form>
+            </div>  
+        </div> 
+    </div>
+</div>

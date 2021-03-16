@@ -1,0 +1,53 @@
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+}
+
+.header_login{
+  text-align: center;
+  padding: 10px;
+}
+.card{
+  width: 40%;
+  margin: 5px;
+  border-radius: 5px;
+  margin:auto;
+
+}
+label{
+  margin-left: 10px;
+  font-size: 20px;
+  color:black;
+  font-weight: 100 !important;
+}
+.login_signup_header{
+  text-align: center;
+}
+input:not([type]):focus:not([readonly])+label{
+  color: black!important;
+}
+input.data_input {
+  border: 1px solid darkgray !important;
+  width: 90% !important;
+  border-radius: 5px !important;
+  margin-left: 10px !important;
+}
+.button_wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+ button{
+  margin: auto;
+}
+.signUp_wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.signUp_wrapper p{
+  font-size: 12px;
+  font-weight: 700;
+}

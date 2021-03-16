@@ -1,0 +1,46 @@
+select{
+    display: block !important;
+    border: 2px solid darkgray;
+}
+.subtitle{
+  text-align: center;
+}
+.hidden{
+    visibility: hidden;
+  }
+  .visible{
+    visibility: visible;
+  }
+  .title{
+    text-align: center;
+    color: #6f7bc2;
+    font-weight: 700;
+    font-family: 'Nerko One', cursive;
+    font-size: 40px;
+  }
+  .card{
+    grid-area: card;
+    margin: 5px;
+    border-radius: 5px;
+  
+  }
+  label{
+    margin-left: 10px;
+    font-size: 16px;
+
+  }
+  input.data_input {
+    border: 1px solid darkgray;
+    width: 90%;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  .button_wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 10px;
+  }
+   button{
+    margin: auto;
+  }

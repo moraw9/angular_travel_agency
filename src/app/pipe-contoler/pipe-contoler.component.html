@@ -1,0 +1,43 @@
+
+<div class="card">
+    <div class="card-body">
+    <h5 class="title">Filtr</h5>
+    <h6 class="subtitle mb-2 text-muted">Wpisz dane do filtrowania</h6>
+
+    <form validate [formGroup]="myFilter" (ngSubmit)="submitForm(myFilter)">
+        <div class="form-group">
+            <label>Kraj</label>
+            <input type="text" class="form-control" formControlName="country">
+        </div>
+        
+        <div class="form-group">
+            <label>Data od</label>
+            <input type="date" class="form-control"  formControlName="start_date" min="{{todayDate | date:'yyyy-MM-dd'}}">
+        </div>
+        
+        <div class="form-group">
+            <label>Data do</label>
+            <input type="date" class="form-control" formControlName="end_date" min="{{todayDate | date:'yyyy-MM-dd'}}">
+        </div>  
+        
+        <div class="form-group" >
+            <label>Cena od</label>
+            <input  class="form-control" formControlName="minVal">
+        </div>
+
+        <div class="form-group" >
+            <label>Cena do</label>
+            <input  class="form-control" formControlName="maxVal">
+        </div>
+        
+        <div class="form-group" >
+            <label>Ocena</label>
+            <input  class="form-control"  formControlName="evaluation">                    
+        </div>
+        <div class="button_wrapper">
+            <button type="submit" class="btn btn-primary">Filtruj</button>
+            <button type="submit" class="btn btn-primary" (click)="clearFilter()">Wyczyść</button>
+        </div>
+    </form>
+</div>
+
